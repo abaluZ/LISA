@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'pages/home_page.dart';
+import 'pages/main_page.dart';
+import 'pages/alphabet_page.dart';
+import 'pages/words_page.dart';
+import 'pages/control_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'LISA',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -30,7 +35,14 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(),
+        '/main': (context) => const MainPage(),
+        '/alphabet': (context) => const AlphabetPage(),
+        '/words': (context) => const WordsPage(),
+        '/control': (context) => const ControlPage(),
+      },
     );
   }
 }
